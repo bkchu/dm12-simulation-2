@@ -1,0 +1,30 @@
+.Layout__container {
+  width: 100%;
+  height: 100%;
+  background-color: #afd4c0;
+  text-align: center;
+}
+
+.Layout__header {
+  height: 75px;
+  background-color: #519872;
+}
+
+.Layout__child {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Layout__button {
+  align-self: center;
+}
+
+.Layout__body {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #e2f3ea;
+}
