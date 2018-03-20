@@ -19,7 +19,7 @@
     "redux-promise-middleware": "^5.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node ./server",
     "deploy": "now --public --dotenv=.env -d",
     "now-start": "node server/",
     "build": "react-scripts build",
