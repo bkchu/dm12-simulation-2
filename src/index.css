@@ -1,3 +1,12 @@
+:root {
+  --success-green: #8aea92;
+  --red: #fec2c2;
+  --white: #f6f0f0;
+  --dark-green: #3b5249;
+  --medium-green: #519872;
+  --light-green: #afd4c0;
+}
+
 *,
 *:before,
 *:after {
@@ -16,4 +25,16 @@ html,
 body {
   width: 100%;
   height: 100%;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.label {
+  font-size: 20px;
+  margin-bottom: 3px;
+  positive: relative;
+  left: -27%;
+  font-weight: 700;
 }

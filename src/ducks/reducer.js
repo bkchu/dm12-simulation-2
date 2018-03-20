@@ -1,6 +1,7 @@
 import axios from "axios";
 const initialState = {
   user: {},
+  loading: false,
   properties: [],
   property_name: "",
   description: "",
@@ -20,6 +21,7 @@ const USER_REGISTERED = "USER_REGISTERED";
 const USER_LOGGED_OUT = "USER_LOGGED_OUT";
 const GET_PROPERTIES = "GET_PROPERTIES";
 const FILTER_PROPERTIES = "FILTER_PROPERTIES";
+const DELETE_PROPERTY = "DELETE_PROPERTY";
 const UPDATE_PROPERTY_NAME = "UPDATE_PROPERTY_NAME";
 const UPDATE_DESCRIPTION = "UPDATE_DESCRIPTION";
 const UPDATE_LOAN = "UPDATE_LOAN";
@@ -35,8 +37,7 @@ const ADD_PROPERTY = "ADD_PROPERTY";
 const CANCEL_ADD = "CANCEL_ADD";
 
 function reducer(state = initialState, action) {
-  console.log("Action Hit: ", JSON.stringify(action));
-
+  console.log("action.type: ", action.type);
   switch (action.type) {
     case `${USER_LOGGED_IN}_FULFILLED`:
       return { ...state, user: action.payload };
@@ -44,10 +45,18 @@ function reducer(state = initialState, action) {
       return { ...state, user: action.payload };
     case `${USER_LOGGED_OUT}_FULFILLED`:
       return { ...state, ...initialState };
+    case `${GET_PROPERTIES}_PENDING`:
+      return { ...state, loading: true };
+    case `${FILTER_PROPERTIES}_PENDING`:
+      return { ...state, loading: true };
+    case `${DELETE_PROPERTY}_PENDING`:
+      return { ...state, loading: true };
     case `${GET_PROPERTIES}_FULFILLED`:
-      return { ...state, properties: action.payload };
+      return { ...state, loading: false, properties: action.payload };
     case `${FILTER_PROPERTIES}_FULFILLED`:
-      return { ...state, properties: action.payload };
+      return { ...state, loading: false, properties: action.payload };
+    case `${DELETE_PROPERTY}_FULFILLED`:
+      return { ...state, loading: false, properties: action.payload };
     case UPDATE_PROPERTY_NAME:
       return { ...state, property_name: action.payload };
     case UPDATE_DESCRIPTION:
@@ -119,16 +128,31 @@ export function getProperties() {
     type: GET_PROPERTIES,
     payload: axios
       .get("/api/properties")
+      .then(response => {
+        return response.data;
+      })
+      .catch(err => console.log(err))
+  };
+}
+
+export function filterProperties(filter) {
+  return {
+    type: FILTER_PROPERTIES,
+    payload: axios
+      .get("/api/properties?filter=" + filter)
       .then(response => response.data)
       .catch(err => console.log(err))
   };
 }
-export function filterProperties(filter) {
+
+export function deleteProperty(id) {
   return {
-    type: GET_PROPERTIES,
+    type: DELETE_PROPERTY,
     payload: axios
-      .get("/api/properties?filter=" + filter)
-      .then(response => response.data)
+      .delete("/api/properties/" + id)
+      .then(response => {
+        return response.data;
+      })
       .catch(err => console.log(err))
   };
 }

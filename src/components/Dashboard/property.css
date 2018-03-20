@@ -1,0 +1,52 @@
+.property {
+  width: 90%;
+  height: 150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background: #dedede;
+  margin-bottom: 20px;
+  line-height: 1.2em;
+}
+
+.property__left {
+  display: flex;
+}
+
+.property__image {
+  width: 150px;
+}
+
+.property__title {
+  text-align: left;
+  margin: 10px;
+}
+
+.property__name {
+  font-weight: bold;
+}
+
+.property__right {
+  border-left: 1px solid black;
+  text-align: left;
+  margin: 10px 0 10px 10px;
+  padding-left: 10px;
+  font-weight: bold;
+  overflow-y: auto;
+}
+
+.property > button {
+  padding-right: 5px;
+  font-size: 20px;
+  top: 0;
+  right: 0;
+  background: var(--red);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in;
+}
+
+.property > button:hover {
+  background: rgba(255, 0, 0, 0.5);
+}

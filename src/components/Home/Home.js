@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { userLoggedIn, userRegistered } from "../../ducks/reducer";
 
+import "./Home.css";
+import Logo from "../../assets/auth_logo.png";
+
 class Home extends Component {
   state = {
     user: "",
@@ -15,6 +18,7 @@ class Home extends Component {
       this.props.history
     );
   };
+
   onRegisterHandler = () => {
     this.props.userRegistered(
       this.state.user,
@@ -24,27 +28,38 @@ class Home extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="Home__container">
-        <p>This is the Home Component</p>
-        <div>
-          <div>Username</div>
+        <img src={Logo} alt="houser logo" />
+        <div className="Home__form">
+          <div className="label">Username</div>
           <input
+            className="Home__input"
             onChange={e => this.setState({ user: e.target.value })}
             type="email"
             required
           />
-          <div>Password</div>
+          <div className="label">Password</div>
           <input
+            className="Home__input"
             onChange={e => this.setState({ password: e.target.value })}
             type="password"
             required
           />
         </div>
         <div>
-          <button onClick={this.onLoginHandler}>Login</button>
-          <button onClick={this.onRegisterHandler}>Register</button>
+          <button
+            className="Home__button Home__button--login bold"
+            onClick={this.onLoginHandler}
+          >
+            Login
+          </button>
+          <button
+            className="Home__button Home__button--register bold"
+            onClick={this.onRegisterHandler}
+          >
+            Register
+          </button>
         </div>
       </div>
     );

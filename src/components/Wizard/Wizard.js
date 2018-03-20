@@ -10,18 +10,23 @@ import StepThree from "./StepThree/StepThree";
 import StepFour from "./StepFour/StepFour";
 import StepFive from "./StepFive/StepFive";
 
+import "./Wizard.css";
+
 class Wizard extends Component {
   render() {
     return (
       <Layout>
         <div className="Wizard__container">
           <div className="Wizard__header">
-            <p>Add new listing</p>
-            <button onClick={() => this.props.cancelAdd(this.props.history)}>
+            <p className="Wizard__title">Add new listing</p>
+            <button
+              className="Wizard__cancel"
+              onClick={() => this.props.cancelAdd(this.props.history)}
+            >
               Cancel
             </button>
-            <div>Step {this.props.match.params.id}</div>
           </div>
+          <div className="Wizard__step">Step {this.props.match.params.id}</div>
         </div>
         <Switch>
           <Route path="/wizard/1" component={StepOne} />

@@ -1,0 +1,61 @@
+.Dashboard {
+  padding-top: 20px;
+}
+
+.Dashboard__button {
+  outline: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.Dashboard__button--add {
+  margin-bottom: 30px;
+  font-weight: bold;
+  padding: 10px;
+  background: var(--success-green);
+}
+
+.Dashboard__text {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.Dashboard__input {
+  width: 85px;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 3px;
+  margin-right: 20px;
+  outline: none;
+  border: 1px solid var(--medium-green);
+}
+
+.Dashboard__button--filter {
+  padding: 7px;
+  width: 70px;
+  background: var(--success-green);
+  margin-right: 10px;
+}
+
+.Dashboard__button--reset {
+  padding: 7px;
+  width: 70px;
+  background: var(--dark-green);
+  color: white;
+}
+
+.Dashboard__line {
+  height: 1px;
+  margin: 20px auto;
+  width: 95%;
+  background: black;
+}
+
+.Dashboard__title {
+  text-align: left;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}

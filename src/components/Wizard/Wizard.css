@@ -1,0 +1,49 @@
+.Wizard__container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.Wizard__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Wizard__title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.Wizard__cancel {
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: var(--red);
+  border: none;
+  padding: 1px 6px;
+}
+
+.Wizard__step {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 30px auto;
+}
+
+.Wizard__button {
+  color: white;
+  box-sizing: border-box;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.Wizard__button--next {
+  background-color: var(--dark-green);
+  margin-left: 20px;
+}
+
+.Wizard__button--complete {
+  background-color: var(--success-green);
+  margin-left: 20px;
+}

@@ -1,0 +1,48 @@
+body {
+  background-color: var(--light-green);
+}
+
+.Home__container {
+  width: 50%;
+  height: 100vh;
+  min-width: 850px;
+  min-height: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.Home__form {
+  margin: 20px 0;
+  width: 70%;
+}
+
+.Home__input {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 25px;
+  border: 1px solid var(--dark-green);
+}
+
+.Home__button {
+  border: none;
+  width: 130px;
+  height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.Home__button--login {
+  color: #000;
+  margin-right: 30px;
+  background: var(--success-green);
+}
+
+.Home__button--register {
+  color: white;
+  background: var(--dark-green);
+}

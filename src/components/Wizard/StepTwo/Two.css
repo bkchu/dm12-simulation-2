@@ -1,0 +1,12 @@
+.Two {
+  width: 80%;
+  margin: 0 auto;
+}
+.Two__input {
+  font-size: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  outline: none;
+  border: 1px solid var(--medium-green);
+}

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import "./Layout.css";
 import { connect } from "react-redux";
 import { userLoggedOut } from "../../ducks/reducer";
 import { Link } from "react-router-dom";
+
+import "./Layout.css";
+import Logo from "../../assets/header_logo.png";
 
 class Layout extends Component {
   render() {
@@ -10,11 +12,18 @@ class Layout extends Component {
       <div className="Layout__container">
         <div className="Layout__header">
           <div className="Layout__child">
-            <p>Logo Here Houser Dashboard</p>
+            <div className="Layout__brand">
+              <img src={Logo} alt="houser logo" />
+              <span className="Layout__title bold">Houser </span>{" "}
+              <span className="Layout__title Layout__title--dashboard">
+                {" "}
+                Dashboard
+              </span>
+            </div>
             <Link to="/">
               <button
                 onClick={() => this.props.userLoggedOut(this.props.history)}
-                className="Layout__button"
+                className="Layout__button bold"
               >
                 Logout
               </button>

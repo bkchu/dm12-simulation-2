@@ -7,40 +7,49 @@ import {
   updateState,
   updateZip
 } from "../../../ducks/reducer";
+import "./Two.css";
 
 class StepTwo extends Component {
   render() {
     return (
-      <div>
-        <div>Address</div>
+      <div className="Two">
+        <div className="label">Address</div>
         <input
+          className="Two__input"
           onChange={e => this.props.updateAddress(e.target.value)}
           type="text"
         />
 
-        <div>City</div>
+        <div className="label">City</div>
         <input
+          className="Two__input"
           onChange={e => this.props.updateCity(e.target.value)}
           type="text"
         />
 
-        <div>State</div>
+        <div className="label">State</div>
         <input
+          className="Two__input"
           onChange={e => this.props.updateState(e.target.value)}
           type="text"
         />
 
-        <div>Zip</div>
+        <div className="label">Zip</div>
         <input
+          className="Two__input"
           onChange={e => this.props.updateZip(e.target.value)}
           type="text"
         />
         <div>
           <Link to="/wizard/1">
-            <button>Previous Step</button>
+            <button className="Wizard__button Wizard__button--next">
+              Previous Step
+            </button>
           </Link>
           <Link to="/wizard/3">
-            <button>Next Step</button>
+            <button className="Wizard__button Wizard__button--next">
+              Next Step
+            </button>
           </Link>
         </div>
       </div>
