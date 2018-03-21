@@ -27,33 +27,37 @@ class Home extends Component {
     );
   };
 
+  onSubmitHandler = e => {
+    e.preventDefault();
+    this.onLoginHandler();
+  };
+
   render() {
     return (
       <div className="Home__container">
         <img src={Logo} alt="houser logo" />
-        <div className="Home__form">
-          <div className="label">Username</div>
-          <input
-            className="Home__input"
-            onChange={e => this.setState({ user: e.target.value })}
-            type="email"
-            required
-          />
-          <div className="label">Password</div>
-          <input
-            className="Home__input"
-            onChange={e => this.setState({ password: e.target.value })}
-            type="password"
-            required
-          />
-        </div>
-        <div>
-          <button
-            className="Home__button Home__button--login bold"
-            onClick={this.onLoginHandler}
-          >
+        <form className="Home__form" onSubmit={this.onSubmitHandler}>
+          <div>
+            <div className="label">Username</div>
+            <input
+              className="Home__input"
+              onChange={e => this.setState({ user: e.target.value })}
+              type="email"
+              required
+            />
+            <div className="label">Password</div>
+            <input
+              className="Home__input"
+              onChange={e => this.setState({ password: e.target.value })}
+              type="password"
+              required
+            />
+          </div>
+          <button className="Home__button Home__button--login bold">
             Login
           </button>
+        </form>
+        <div>
           <button
             className="Home__button Home__button--register bold"
             onClick={this.onRegisterHandler}

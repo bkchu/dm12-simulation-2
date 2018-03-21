@@ -43,6 +43,9 @@ body {
 }
 
 .Home__button--register {
+  position: relative;
+  top: -60px;
+  left: -122px;
   color: white;
   background: var(--dark-green);
 }
